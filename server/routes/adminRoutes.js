@@ -3,6 +3,7 @@ const sharp = require('sharp');
 const router = require('express').Router()
 const userController = require('../apis/user/userController')
 const categoryController = require('../apis/category/categoryController')
+const adminController = require('../apis/admin/adminController')
 
 //helper
 var helper = require('../utilities/helper')
@@ -48,6 +49,9 @@ router.delete('/category/delete', categoryController.deleteCategory)
 
 /** User Routes  Ends*/
 
+
+/** Admin Routes  */
+router.post('/admin/addadmin', adminController.addAdmin)
 
 
 router.post('*', (req, res) => {
